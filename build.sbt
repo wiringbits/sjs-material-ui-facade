@@ -1,6 +1,19 @@
 ThisBuild / scalaVersion := "2.13.3"
 ThisBuild / organization := "com.alexitc"
-ThisBuild / version := "0.1.0"
+
+inThisBuild(List(
+  organization := "com.alexitc",
+  homepage := Some(url("https://github.com/wiringbits/sjs-material-ui-facade")),
+  licenses := List("MIT" -> url("http://www.opensource.org/licenses/mit-license.html")),
+  developers := List(
+    Developer(
+      "AlexITC",
+      "Alexis Hernandez",
+      "alexis22229@gmail.com",
+      url("https://wiringbits.net")
+    )
+  )
+))
 
 lazy val root = (project in file("."))
   .configure(_.enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin, ScalablyTypedConverterGenSourcePlugin))
@@ -11,7 +24,6 @@ lazy val root = (project in file("."))
     stFlavour := Flavour.Slinky,
     stMinimize := Selection.AllExcept("@material-ui/core", "@material-ui/styles", "@material-ui/icons"),
     stOutputPackage := "com.alexitc.materialui.facade",
-    publishMavenStyle := true,
     stReactEnableTreeShaking := Selection.All,
     stUseScalaJsDom := true,
     // disabled because it somehow triggers many warnings
