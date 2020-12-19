@@ -36,6 +36,4 @@ lazy val root = (project in file("."))
     ),
     // docs are huge and unnecessary
     sources in (Compile, doc) := Nil,
-    publishArtifact in (Compile, packageDoc) := false
   )
-
