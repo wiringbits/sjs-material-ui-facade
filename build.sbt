@@ -19,7 +19,7 @@ lazy val root = (project in file("."))
   .configure(_.enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin, ScalablyTypedConverterGenSourcePlugin))
   .settings(
     name := "sjs-material-ui-facade",
-    requireJsDomEnv in Test := true,
+    Test / requireJsDomEnv := true,
     stTypescriptVersion := "3.9.3",
     stFlavour := Flavour.Slinky,
     stMinimize := Selection.AllExcept("@material-ui/core", "@material-ui/styles", "@material-ui/icons"),
@@ -35,5 +35,5 @@ lazy val root = (project in file("."))
       "@material-ui/icons" -> "3.0.2",
     ),
     // docs are huge and unnecessary
-    sources in (Compile, doc) := Nil,
+    Compile / doc / sources := Nil,
   )
