@@ -18,7 +18,7 @@ lazy val root = (project in file("."))
   .configure(_.enablePlugins(ScalaJSPlugin, ScalaJSBundlerPlugin, ScalablyTypedConverterGenSourcePlugin))
   .settings(
     scalaVersion := "3.1.1",
-    crossScalaVersions ++= Seq("2.13.8", "3.1.1"),
+    crossScalaVersions ++= Seq("2.13.10", "3.1.1"),
     name := "sjs-material-ui-facade",
     Test / requireJsDomEnv := true,
     stTypescriptVersion := "3.9.3",
